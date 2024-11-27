@@ -67,8 +67,12 @@ if(EXPECTED_BUILD_TESTS)
   set(CATCH_INSTALL_HELPERS OFF)
   set(CATCH_BUILD_TESTING OFF)
   set(CATCH_INSTALL_DOCS OFF)
-  FetchContent_Declare(Catch2 URL
-    https://github.com/catchorg/Catch2/archive/v2.13.10.zip) 
+  FetchContent_Declare(
+    Catch2 
+    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+    GIT_TAG v2.13.10
+  )
+  
   FetchContent_MakeAvailable(Catch2)
 
   file(GLOB test-sources CONFIGURE_DEPENDS tests/*.cpp)
